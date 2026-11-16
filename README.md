@@ -30,7 +30,7 @@ Where the records are silent, the answer says "unrecorded" and names the office 
 | `.../checks/` | 20 questions that test the data path (needs internet) |
 | `.../CHECKSUMS.txt` | SHA-256 of every file |
 
-The skill version is `1.0-draft`.
+The skill version is `1.1`.
 
 ## Install
 
@@ -80,11 +80,12 @@ Without the connector, the skill falls back to `scripts/aa.py` (run `python scri
 
 ## What is live, and what is not
 
-Live today (14 tools, read from the server on November 14, 2026): `find_camps`, `camp_detail`, `camps_near`, `free_camping_near_town`, `plan_four_nights`, `forest_weather`, `changes_since`, `what_we_cover`, `land_at`, `rig_math`, `trip_check`, plus three that serve the free camping game Dispersed 3D (`game_leaderboard`, `one_call`, `trip_status`).
+Live today (16 tools): `find_camps`, `camp_detail`, `camps_near`, `free_camping_near_town`, `plan_four_nights`, `forest_weather`, `changes_since`, `what_we_cover`, `land_at`, `rig_math`, `trip_check`, `posted_orders`, `road_to_camp`, plus three that serve the free camping game Dispersed 3D (`game_leaderboard`, `one_call`, `trip_status`).
 
 Limits, stated plainly:
 - `land_at` answers for national forests only. Anywhere else it says so and names no manager.
-- Roads are not in the records. The skill sends you to the office.
+- `posted_orders` quotes what a forest posted on its own alerts page, for the forests we read. "Nothing posted when we read it" is not "no fire ban," and "could not read" is never "none."
+- `road_to_camp` gives the Forest Service's recorded road to a camp in 20 national forests. It is the record, not today's condition. Anywhere else roads are not in the records, and the skill sends you to the office.
 - Distances are straight-line miles, not drive time.
 - Records are a starting point, not a promise that a place is open, legal or safe.
 

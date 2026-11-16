@@ -24,6 +24,8 @@ summary instead of JSON.
 All distances are straight-line miles. A null or missing field means UNRECORDED.
 changes_since and what_we_cover are on the MCP connector (https://davelalande.com/mcp, live 2026-11-11).
 land_at (national forests only) is on the MCP connector too (live 2026-11-11).
+trip_check (a whole trip on given dates), rig_math, posted_orders (a forest's own posted orders) and road_to_camp
+(the recorded road to a camp) are MCP connector tools too; this script does not call them.
 """
 import argparse
 import json

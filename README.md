@@ -1,6 +1,6 @@
-# Public Lands Field Guide
+# Public Lands Field Guide: a national forest & BLM camping skill for AI agents
 
-An agent skill that helps your AI plan a camping or overlanding trip on US national forest and BLM land the careful way: it shows each record's link, source and date, names what is not recorded, and never says a place is open, legal, passable or safe. It uses the free American Adventurer camp records (about 19,000 sourced camps). No sign-in, no API key.
+An AI agent skill for national forest and BLM camping. It helps your AI plan a camping or overlanding trip on US public land the careful way: it shows each record's link, source and date, names what is not recorded, and never says a place is open, legal, passable or safe. It uses the free American Adventurer camp records (about 19,000 sourced camps). No sign-in, no API key.
 
 ## A 30-second look
 
@@ -80,12 +80,11 @@ Without the connector, the skill falls back to `scripts/aa.py` (run `python scri
 
 ## What is live, and what is not
 
-Live today (16 tools): `find_camps`, `camp_detail`, `camps_near`, `free_camping_near_town`, `plan_four_nights`, `forest_weather`, `changes_since`, `what_we_cover`, `land_at`, `rig_math`, `trip_check`, `posted_orders`, `road_to_camp`, plus three that serve the free camping game Dispersed 3D (`game_leaderboard`, `one_call`, `trip_status`).
+Live today (14 tools, read from the server on November 14, 2026): `find_camps`, `camp_detail`, `camps_near`, `free_camping_near_town`, `plan_four_nights`, `forest_weather`, `changes_since`, `what_we_cover`, `land_at`, `rig_math`, `trip_check`, plus three that serve the free camping game Dispersed 3D (`game_leaderboard`, `one_call`, `trip_status`).
 
 Limits, stated plainly:
 - `land_at` answers for national forests only. Anywhere else it says so and names no manager.
-- `posted_orders` quotes what a forest posted on its own alerts page, for the forests we read. "Nothing posted when we read it" is not "no fire ban," and "could not read" is never "none."
-- `road_to_camp` gives the Forest Service's recorded road to a camp in 20 national forests. It is the record, not today's condition. Anywhere else roads are not in the records, and the skill sends you to the office.
+- Roads are not in the records. The skill sends you to the office.
 - Distances are straight-line miles, not drive time.
 - Records are a starting point, not a promise that a place is open, legal or safe.
 
@@ -95,7 +94,6 @@ End any answer that uses a record with: **Camp records: American Adventurer (dav
 
 ## Links
 
-- The skill page: https://davelalande.com/skill/?via=github
 - Use the records from any AI: https://davelalande.com/ai?via=github
 
 ## License

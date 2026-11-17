@@ -42,8 +42,8 @@ Full steps are in [references/order-of-work.md](references/order-of-work.md). In
 2. **Rules.** Lead with any recorded closure, season or stay limit.
 3. **Season.** Spring, summer and fall only. Never plan snow or winter.
 4. **Road.** Say what `road_to_camp` records for the camps it covers (20 national forests); elsewhere not in the records. Name the office.
-5. **Water.** What the record holds, nothing more.
-6. **Town run.** Fuel, groceries, water, dump from the record, in straight-line miles.
+5. **Water.** What the record holds, then water near the camp: `water_near` (or `aa.py water LAT LON`) finds springs, hot springs, waterfalls, lakes, creeks and Forest Service fill points with their sources, in Montana's Custer Gallatin, Beaverhead-Deerlodge and Lolo and every Oregon national forest. Natural water is untested: filter or boil. Never call water safe to drink.
+6. **Town run and comforts.** The nearest recorded toilets (`nearby` with kind toilets, or `aa.py toilets LAT LON`; 21,390 on public land) and resupply: drinking water, showers, dump stations, fuel, groceries, propane, laundry (`nearby` with that kind, or `aa.py poi LAT LON CATEGORY`), in straight-line miles. A recorded toilet can be closed for the season; resupply comes from OpenStreetMap, a floor and never a survey.
 7. **Fire and weather.** NWS forecast, wildfire reports and the forest's own posted orders (`posted_orders`), quoted and dated.
 8. **Rig math.** Plain arithmetic with stated assumptions (`rig_math`, or `trip_check` for a whole trip).
 9. **Backup camp.** Always one more camp, in case the first is full or closed.
@@ -77,7 +77,7 @@ Sources and their credits are in [references/sources.md](references/sources.md).
 
 ## Check your copy
 
-Run `python checks/run_checks.py` to test the data path (the API and `scripts/aa.py`, not the MCP tools) against 25 questions. Run `sha256sum -c CHECKSUMS.txt` in this folder to see that no file has changed.
+Run `python checks/run_checks.py` to test the data path (the API and `scripts/aa.py`, not the MCP tools) against 27 questions. Run `sha256sum -c CHECKSUMS.txt` in this folder to see that no file has changed.
 
 ## The companion skill
 

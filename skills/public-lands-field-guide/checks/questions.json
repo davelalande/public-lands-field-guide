@@ -489,6 +489,23 @@
    },
    "right_answer": "Lower Hyalite, a Forest Service vault toilet, about 1.7 straight-line miles away (read 2026-11-17); a recorded toilet can be closed for the season, so the answer gives the record, not that it is open.",
    "record_url": "https://davelalande.com/api/near?lat=45.568&lon=-111.038&radius=10&type=toilets"
+  },
+  {
+   "id": "q27",
+   "question": "A camper at Moser Road 6212 G15 (45.568, -111.038) asks what water is nearby.",
+   "cmd": [
+    "water",
+    "45.568",
+    "-111.038",
+    "--radius",
+    "10"
+   ],
+   "check": {
+    "path": "data.records",
+    "min_len": 1
+   },
+   "record_url": "https://davelalande.com/api/water?lat=45.568&lon=-111.038&radius=10",
+   "right_answer": "Water records nearest first, e.g. Moser Creek (a creek, about 2.4 straight-line miles, read 2026-11-17), each with its sources; natural water is untested: filter or boil; the forest office has the final word."
   }
  ]
 }

@@ -54,9 +54,9 @@ It never says "enough," and it never says a trip is safe.
 | Folder | What it is |
 | --- | --- |
 | `skills/public-lands-field-guide/SKILL.md` | The Field Guide's instructions |
-| `.../scripts/aa.py` | Read-only helper for the API. Python 3.8+, standard library only |
+| `.../scripts/aa.py` | Read-only helper for the API. Python 3.8+, standard library only. Camps, forests, weather, fire, the nearest recorded toilets (21,390), and resupply near a point: drinking water, showers, dump stations, fuel, groceries, propane |
 | `.../references/` | Order of work, honesty rules, tools, a before-you-go list, trip sheet, what you can ask, coverage, sources |
-| `.../checks/` | 25 questions that test the data path (needs internet) |
+| `.../checks/` | 26 questions that test the data path (needs internet) |
 | `skills/overland-trip-kit/SKILL.md` | The Kit's instructions |
 | `.../scripts/rig.py` | Water, gas and power arithmetic. Python 3.8+, standard library only, no network |
 | `.../references/` | Rig card, six checklists with truck and van lines, gear by kind, trip sheet, what you can ask |

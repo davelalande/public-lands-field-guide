@@ -196,6 +196,7 @@ def main(argv=None):
     s = sub.add_parser("near"); s.add_argument("lat"); s.add_argument("lon"); s.add_argument("--radius", default="25")
     s.add_argument("--cost", choices=["free", "fee", "unpriced"]); s.add_argument("--limit", type=int, default=10)
     s = sub.add_parser("poi"); s.add_argument("lat"); s.add_argument("lon"); s.add_argument("category"); s.add_argument("--radius", default="25")
+    s = sub.add_parser("toilets"); s.add_argument("lat"); s.add_argument("lon"); s.add_argument("--radius", default="25"); s.add_argument("--limit", type=int, default=5)
     s = sub.add_parser("town"); s.add_argument("name"); s.add_argument("--state"); s.add_argument("--radius", default="25"); s.add_argument("--limit", type=int, default=5)
     s = sub.add_parser("forest"); s.add_argument("q")
     s = sub.add_parser("land"); s.add_argument("q")
@@ -216,6 +217,8 @@ def main(argv=None):
         keep_cost(data, a.cost, a.limit)
     elif a.cmd == "poi":
         url, data = get("/api/near", {"lat": a.lat, "lon": a.lon, "radius": a.radius, "type": "poi", "cat": a.category})
+    elif a.cmd == "toilets":      # 11/17 (Dave: "Does our skill help you with finding a toilet?"): the 21,390 recorded toilets, nearest first
+        url, data = get("/api/near", {"lat": a.lat, "lon": a.lon, "radius": a.radius, "type": "toilets", "limit": a.limit})
     elif a.cmd == "town":
         lat, lon, name, st, _ = find_town(a.name, a.state)
         url, data = get("/api/near", {"lat": lat, "lon": lon, "radius": a.radius, "limit": 100})

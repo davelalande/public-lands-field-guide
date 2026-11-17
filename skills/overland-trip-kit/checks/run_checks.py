@@ -1,18 +1,24 @@
 #!/usr/bin/env python3
-"""run_checks.py - runs checks/cases.json through scripts/rig.py. Offline: no network, no model.
+"""run_checks.py - runs checks/cases.json through scripts/rig.py, in this same process. Offline: no network, no model, no subprocess.
 
   python run_checks.py            run all 15
   python run_checks.py c03 c07    run only those
 Exit code 0 = all passed, 1 = at least one failed. Python 3.8+, standard library only.
 """
+import contextlib
+import importlib.util
+import io
 import json
 import os
-import subprocess
 import sys
+from types import SimpleNamespace
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 RIG = os.path.join(HERE, "..", "scripts", "rig.py")
 MISSING = object()
+_spec = importlib.util.spec_from_file_location("rig", RIG)
+_rig = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(_rig)     # scripts/rig.py, loaded in this process (no subprocess)
 
 
 def dig(obj, path):
@@ -45,7 +51,14 @@ def all_assumptions(result):
 
 
 def run(args):
-    return subprocess.run([sys.executable, RIG] + args + ["--json"], capture_output=True, text=True, encoding="utf-8")
+    """Runs rig.py in this process; returns returncode, stdout and stderr like a finished command."""
+    out, err = io.StringIO(), io.StringIO()
+    try:
+        with contextlib.redirect_stdout(out), contextlib.redirect_stderr(err):
+            code = _rig.main(list(args) + ["--json"])
+    except SystemExit as e:       # argparse refuses a bad command with exit 2
+        code = e.code if isinstance(e.code, int) else 2
+    return SimpleNamespace(returncode=code or 0, stdout=out.getvalue(), stderr=err.getvalue())
 
 
 def main():

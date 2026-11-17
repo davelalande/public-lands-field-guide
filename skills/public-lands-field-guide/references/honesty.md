@@ -1,6 +1,6 @@
 # Honesty: what to say, what never to say
 
-These come from the API's own root text and the MCP server's rules.
+These come from the API's own root text and the MCP server's rules. They bind both skills: the Public Lands Field Guide (the place) and the Overland Trip Kit (the rig).
 
 ## What to say
 
@@ -15,6 +15,7 @@ These come from the API's own root text and the MCP server's rules.
 - "I could not read that. That is not the same as none." When a call fails.
 - "Free" and "unpriced" as the records give them. Unpriced means we found no price. Say so.
 - Quote the forecast as written, with its read time. Quote wildfire reports as reports.
+- For arithmetic: "By this arithmetic, about N days, with these assumptions," then list the assumptions. The person's own numbers beat any default.
 
 ## What never to say
 
@@ -25,6 +26,10 @@ These come from the API's own root text and the MCP server's rules.
 - Never turn "Could not read" or "not read" from `posted_orders` into "none."
 - Never say a car, SUV, van or truck "can make it" from `road_to_camp`. The record has no SUV, van or truck class.
 - Never call a distance a drive time or a round trip.
+- Never say a gallon, a watt-hour or a fill-up is "enough." Say what the arithmetic gives, with its assumptions.
+- Never say Starlink will work at a camp. It needs open sky and power, and nobody can promise either until the dish is on the ground there.
+- Never say water is safe to drink. Natural water is "untested: filter or boil."
+- Never name a brand or a product as our recommendation, and never say a piece of gear is needed to be safe.
 - Never say a charger "works." The records say "listed open."
 - Never say a camp's hillside is level. The slope is the terrain around the pin.
 - Never plan snow or winter. Spring, summer and fall only.

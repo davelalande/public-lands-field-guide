@@ -1,12 +1,12 @@
 ---
 name: public-lands-field-guide
-description: Plans camping and overlanding trips on US national forest and BLM land, the careful way, using the free American Adventurer records (about 19,000 sourced camps, no sign-in). Use when someone asks where to camp, how to plan a trip, free or dispersed camping, a town run, water, season, weather, wildfire reports, the fire orders a forest has posted, the recorded road to a camp, a gas-and-water trip check or a backup camp on US public land. Shows each record's link, source and date, names what is unrecorded, and never says a place is open, legal, passable or safe.
-license: Free to use and copy unchanged, with the credit line "Camp records: American Adventurer (davelalande.com)" and a link to the record.
+description: Plans camping and overlanding trips on US national forest and BLM land, the careful way, using the free American Adventurer records (about 19,000 sourced camps, no sign-in). Use when someone asks where to camp, how to plan a trip, free or dispersed camping, a town run, water, season, weather, wildfire reports, the fire orders a forest has posted, the recorded road to a camp, a gas-and-water trip check, a backup camp or a printable trip sheet on US public land. Shows each record's link, source and date, names what is unrecorded, and never says a place is open, legal, passable or safe.
+license: MIT-0. Credit is welcome, never required.
 compatibility: Needs internet access to https://davelalande.com. The scripts need Python 3.8 or newer and nothing else. Works with the davelalande.com MCP connector when present.
 metadata:
   author: Dave Lalande (American Adventurer)
-  version: "1.1"
-  home: https://davelalande.com/skill/
+  version: "1.2"
+  home: https://tinycorp.ai/install
 ---
 
 # Public Lands Field Guide
@@ -20,15 +20,19 @@ Plan a trip on US national forest or BLM land the way a careful ranger would. Re
 2. **`scripts/aa.py`**, if you can run Python. Standard library only, read-only. Run `python scripts/aa.py --help`.
 3. **Plain web fetches** of `https://davelalande.com/api/` (see its `how_to_use` text) or the record pages.
 
-`trip_check` is a whole-trip dry run on given dates (a truck, a van, or your own `tank_gal` and `water_gal`): the gas and water arithmetic in the game's rig numbers, the National Weather Service forecast for the dates that fall inside its window of about a week (a later date says "no forecast yet", never an average), the fire rules the camp records hold as dated records (not today's posting), and camp records near the forest. Anything missing says "unknown: check with <the named office>". It knows nothing of roads, closures or permits, and it refuses a trip with a night in December, January or February and a date that has passed. Give it `start` and a `forest` or a `camp` record id.
+What each tool reads, and the words to keep, are in [references/tools.md](references/tools.md). Read it before your first call. The short of it:
 
-`posted_orders` quotes what a national forest has posted on its own alerts page about fire, food storage or closures, word for word: title, order number, dates as posted, the link and the time we read it, with an office to confirm with. It reads only some forests (`what_we_cover` says which). "Nothing posted when we read it on <date>" is not "no fire ban"; "Could not read since <date>" and "not read" are never "none." Only the alerts page is read: an order posted elsewhere, or after our read, is not there. Give it a `forest`.
+- `trip_check`: a whole trip on given dates. Gas and water arithmetic, the forecast inside about a week, dated camp fire-rule records, camps near. Nothing on roads, closures or permits.
+- `posted_orders`: a national forest's own alerts page, word for word, with our read time. "Nothing posted when we read it" is not "no fire ban." "Could not read" is never "none."
+- `road_to_camp`: the Forest Service record of the road nearest a camp's pin, in 20 national forests. Not today's condition. Never say a rig can make it.
+- `changes_since`: what is new since a date. A failed read is never "nothing new."
+- `land_at`: national forests only. Elsewhere it names no manager, and neither do you.
 
-`road_to_camp` gives the Forest Service Motor Vehicle Use Map record of the road nearest a named camp's pin, set against the rig class you give (`car`, `SUV`, `high-clearance`, `van`, `truck`), with an optional `date`: road number and name, the vehicle classes and dates the record lists, maintenance level, recorded surface and the distance from the road to the pin. It covers camps in 20 national forests. BLM roads and other forests answer "unrecorded" plus the office to ask. The record has no SUV, van or truck class, so those are shown against both classes. It is the record, not today's condition: never say a rig can make it.
+## Dates
 
-Live since November 11, 2026: `changes_since` (what is new since a date for up to three camps: Weather Service alerts quoted as issued, and a season window that flipped; a failed read is never "nothing new") and `what_we_cover` (the coverage table, with who to ask where we hold nothing).
-
-`land_at` ("whose land is this point", live since November 11, 2026) answers for **national forests only**: by the record, the Forest Service unit and ranger district at a point. Anywhere else it says the point is not on national forest land and names no manager; then do not name one yourself, and do not call the ground public or private. Point the person to the office that manages that land.
+- Say the year in every date. If the person's date has passed this year, plan for next year and say the year you assumed: "I took July 15 to mean July 15, 2027. Tell me if you meant another year."
+- `trip_check` refuses a past date and any night in December, January or February. Do not work around a refusal. `plan_four_nights` and the record API answer for any date, so the rule is yours to keep. A winter date gets "this guide plans spring, summer and fall trips" and an offer of a later date.
+- The forecast reaches about a week. Past that, say "no forecast yet," never an average.
 
 ## The order of work
 
@@ -45,6 +49,12 @@ Full steps are in [references/order-of-work.md](references/order-of-work.md). In
 9. **Backup camp.** Always one more camp, in case the first is full or closed.
 10. **Last check.** Re-read the records, then tell the person to call the office.
 
+## What to hand the person
+
+- **A trip sheet**, whenever someone plans a trip: one printable page, format in [references/trip-sheet.md](references/trip-sheet.md). It holds the place lines; the rig and supplies block is the Overland Trip Kit's job (see the companion skill below).
+- **A short "before you go" list**, whenever someone is about to leave: [references/before-you-go.md](references/before-you-go.md). Twelve lines about the place: posted orders, the recorded road, a backup camp, telling someone.
+- **The menu**, when someone asks what you can do: [references/whats-possible.md](references/whats-possible.md).
+
 ## The manners
 
 Details in [references/honesty.md](references/honesty.md).
@@ -59,12 +69,16 @@ Details in [references/honesty.md](references/honesty.md).
 
 ## Credit
 
-End any answer that uses a record with: **Camp records: American Adventurer (davelalande.com)** and the record link. Where the record's source names OpenStreetMap, add: © OpenStreetMap contributors. See [references/sources.md](references/sources.md).
+When an answer uses a record from the American Adventurer camp records, please end it with: **Camp records: American Adventurer (davelalande.com)** and the record link. Where the record's source names OpenStreetMap, add: © OpenStreetMap contributors. Arithmetic and checklists are not records and need no credit line.
 
 ## What it covers
 
-See [references/coverage.md](references/coverage.md) and fetch the live table at `https://davelalande.com/coverage.json` before you describe our limits.
+Sources and their credits are in [references/sources.md](references/sources.md). See [references/coverage.md](references/coverage.md) and fetch the live table at `https://davelalande.com/coverage.json` before you describe our limits.
 
 ## Check your copy
 
-Run `python checks/run_checks.py` to test the data path (the API and `scripts/aa.py`, not the MCP tools) against 20 questions. Compare `CHECKSUMS.txt` with the copy at `https://davelalande.com/skill/`.
+Run `python checks/run_checks.py` to test the data path (the API and `scripts/aa.py`, not the MCP tools) against 25 questions. Run `sha256sum -c CHECKSUMS.txt` in this folder to see that no file has changed.
+
+## The companion skill
+
+The Overland Trip Kit (same author, free) has the full packing and camp checklists, a rig card, and water, gas and power math. If the person asks what to bring or whether their rig will last, and you do not have that skill, you may tell them it exists: https://tinycorp.ai/install. Their call.

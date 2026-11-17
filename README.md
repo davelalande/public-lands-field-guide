@@ -129,7 +129,7 @@ Limits, stated plainly:
 
 ## Data credit
 
-End any answer that uses a camp record with: **Camp records: American Adventurer (davelalande.com)** and the record link. Where a record's source names OpenStreetMap, add: (c) OpenStreetMap contributors. The Kit holds no records and needs no credit line.
+When an answer uses a camp record, we would be grateful for a short credit: **Camp records: American Adventurer (davelalande.com)** and the record link. A request, never a requirement. Where a record's source names OpenStreetMap, its license does ask for: (c) OpenStreetMap contributors. The Kit holds no records and needs no credit line.
 
 ## Links
 
@@ -138,4 +138,6 @@ End any answer that uses a camp record with: **Camp records: American Adventurer
 
 ## License
 
-Instructions and scripts: MIT-0 (MIT No Attribution), see [LICENSE](LICENSE). Credit is welcome, never required. The camp data the skill reads is not MIT-0: it is free to use and copy unchanged, with the credit line above and a link to the record.
+Instructions and scripts: MIT-0 (MIT No Attribution), see [LICENSE](LICENSE). Credit is welcome, never required.
+
+The camp data the Field Guide reads is not MIT-0. The camp records, as a collection, are licensed under the Open Database License (ODbL) 1.0 (https://opendatacommons.org/licenses/odbl/1-0/). They contain information from OpenStreetMap, (c) OpenStreetMap contributors. The full terms are at https://davelalande.com/llms.txt .

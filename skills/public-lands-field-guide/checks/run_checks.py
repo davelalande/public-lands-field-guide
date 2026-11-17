@@ -2,15 +2,17 @@
 """run_checks.py - runs checks/questions.json through scripts/aa.py and reports pass or fail.
 
 This checks OUR DATA PATH (the live API and the script), not a language model.
-Python standard library only. About 25 API calls, paced. Usage:
+Python standard library only; it runs scripts/aa.py in this same process (no subprocess). About 27 API calls, paced. Usage:
 
-  python run_checks.py            run all 25
+  python run_checks.py            run all of them
   python run_checks.py q06 q15    run only those
 Exit code 0 = all passed, 1 = at least one failed.
 """
+import contextlib
+import importlib.util
+import io
 import json
 import os
-import subprocess
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -18,12 +20,26 @@ AA = os.path.join(HERE, "..", "scripts", "aa.py")
 ENVELOPE_KEYS = ("request_url", "source", "record_date", "fetched_at", "credit")
 
 
+_spec = importlib.util.spec_from_file_location("aa", AA)
+_aa = importlib.util.module_from_spec(_spec)
+_spec.loader.exec_module(_aa)       # scripts/aa.py, loaded in this process (no subprocess, no environment)
+
+
 def run(cmd):
-    r = subprocess.run([sys.executable, AA] + cmd, capture_output=True, text=True, encoding="utf-8",
-                       env=dict(os.environ, PYTHONUTF8="1"))
-    if r.returncode != 0:
-        return None, (r.stderr or r.stdout).strip()
-    return json.loads(r.stdout), None
+    """Runs one aa.py command in this process and returns (its JSON, None) or (None, the error)."""
+    out, err = io.StringIO(), io.StringIO()
+    try:
+        with contextlib.redirect_stdout(out), contextlib.redirect_stderr(err):
+            _aa.main(list(cmd))
+    except SystemExit as e:
+        if e.code not in (None, 0):
+            return None, (str(e.code) if not isinstance(e.code, int) else (err.getvalue() or out.getvalue())).strip()
+    except Exception as e:      # a network error or a bad answer counts as a failed check, never a crash
+        return None, "%s: %s" % (type(e).__name__, e)
+    try:
+        return json.loads(out.getvalue()), None
+    except ValueError:
+        return None, (err.getvalue() or out.getvalue()).strip()[:400]
 
 
 MISSING = object()

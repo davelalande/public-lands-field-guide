@@ -10,7 +10,7 @@ The sheet has two halves. The place lines (land, camp, road, town run, forecast,
 - Every line about a place comes from a record and carries its link and record date. A line with no record says "unrecorded: ask <office>".
 - Say the year in every date. If you assumed the year, say so on the sheet.
 - Distances from records are straight-line miles. Say so on each one. Road miles come from the person, read off a map.
-- Arithmetic comes with its assumptions printed, from `scripts/rig.py` (Kit), or from `trip_check` or `rig_math` (connector). If you did it by hand, show the sum. The person's own numbers beat any default.
+- Arithmetic comes with its assumptions printed, from the Overland Trip Kit's rig script (rig.py, in the Kit), or from `trip_check` or `rig_math` (connector). If you did it by hand, show the sum. The person's own numbers beat any default.
 - Never write open, legal, passable or safe. Write what the record says and who to confirm with.
 - Keep it to one page. Leave out a section's extra lines before you leave out its "unrecorded".
 
@@ -92,5 +92,5 @@ Camp records: American Adventurer (davelalande.com). <record links>
 - **Town run.** Use the names and miles the record gives. A null entry is "unrecorded". The person reads the road miles off a map and you pass them to `trip_check` as `pump_paved_mi` and `pump_unpaved_mi`.
 - **Gas and water.** Copy the tool's own lines and its assumptions. If the person gave their own tank, water or mileage, use those and say so.
 - **Forecast.** Only what the forecast holds for the dates inside its window. Never an average, never "typical weather for that month".
-- **Without the connector.** `trip_check`, `rig_math`, `posted_orders`, `road_to_camp`, `land_at` and `changes_since` are connector tools. Without them, fill what `scripts/aa.py` gives (Field Guide), do the arithmetic by hand or with `scripts/rig.py` (Kit), and write "not read: ask <office>" on the ROAD and POSTED ORDERS lines.
+- **Without the connector.** `trip_check`, `rig_math`, `posted_orders`, `road_to_camp`, `land_at` and `changes_since` are connector tools. Without them, fill what `scripts/aa.py` gives (Field Guide), do the arithmetic by hand or with the Overland Trip Kit's rig script (rig.py, in the Kit), and write "not read: ask <office>" on the ROAD and POSTED ORDERS lines.
 - **Credit.** When the sheet uses a record, its last line carries the credit and the record links. Add each source the sheet used.

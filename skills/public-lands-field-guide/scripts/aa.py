@@ -161,6 +161,7 @@ def summarize(env):
         out.append("%s %s points within %s mi (a floor, never a survey)" % (d.get("total"), d.get("category"), d.get("radius_miles")))
     else:
         out.append(json.dumps(d)[:400])
+    out.append("record: %s" % env.get("request_url"))      # every summary names the exact record it came from
     out.append("source: %s | record date: %s | fetched: %s" % (env["source"], env["record_date"], env["fetched_at"]))
     out.append(env["credit"] + ". " + env["osm_note"])
     return "\n".join(out)

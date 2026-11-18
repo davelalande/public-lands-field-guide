@@ -6,10 +6,10 @@
 
 Two free agent skills: **Public Lands Field Guide**, a national forest camping skill (national forest and BLM camping for AI agents, with about 19,000 sourced camp records), and **Overland Trip Kit**, an overlanding skill for AI agents (checklists, a rig card, and water, gas and power math for a truck or a van). Both are MIT-0. Credit is welcome, never required. No sign-in, no API key.
 
-| | Public Lands Field Guide (1.3.0) | Overland Trip Kit (1.0.2) |
+| | Public Lands Field Guide (1.3.1) | Overland Trip Kit (1.0.2) |
 | --- | --- | --- |
 | It answers | **Where, and what do the records say?** | **Am I ready, and will my supplies last?** |
-| Built on | the American Adventurer camp records and 16 connector tools | know-how and arithmetic; needs no network |
+| Built on | the American Adventurer camp records and 18 connector tools | know-how and arithmetic; needs no network |
 | Works for | US national forest and BLM land | any overland trip in the US, on any land |
 | Never | estimates what a record does not hold | states any fact about a place |
 | Folder | `skills/public-lands-field-guide/` | `skills/overland-trip-kit/` |
@@ -64,7 +64,7 @@ It never says "enough," and it never says a trip is safe.
 | `.../CHECKSUMS.txt` | SHA-256 of every file in that skill |
 | `_shared/` | The files both skills share, written once, and the script that copies them in |
 
-Skill versions: Public Lands Field Guide `1.3.0`, Overland Trip Kit `1.0.2`. What changed: [CHANGELOG.md](CHANGELOG.md).
+Skill versions: Public Lands Field Guide `1.3.1`, Overland Trip Kit `1.0.2`. What changed: [CHANGELOG.md](CHANGELOG.md).
 
 ## Install
 

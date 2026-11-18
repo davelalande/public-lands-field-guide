@@ -4,6 +4,9 @@ Two skills live in this repo, each with its own version (the `metadata.version` 
 
 ## Public Lands Field Guide
 
+### 1.3.1 (2026-11-18)
+- The tool list now names all 18 connector tools, `water_near` and `nearby` included (it still said 16). No change to how the skill works.
+
 ### 1.3.0 (2026-11-17)
 - Water near a camp: springs, hot springs, waterfalls, lakes, creeks and Forest Service fill points, each with its government sources (Montana's game forests and every Oregon national forest). Natural water is always "untested: filter or boil". (`aa.py water`, the connector's `water_near`)
 - The nearest recorded toilets (21,390 on public land) and resupply nearby: drinking water, showers, dump stations, fuel, groceries, propane, laundry. (`aa.py toilets`, `aa.py poi`, the connector's `nearby`)

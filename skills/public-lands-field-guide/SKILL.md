@@ -5,7 +5,7 @@ license: MIT-0. Credit is welcome, never required.
 compatibility: Needs internet access to https://davelalande.com. The scripts need Python 3.8 or newer and nothing else. Works with the davelalande.com MCP connector when present.
 metadata:
   author: Dave Lalande (American Adventurer)
-  version: "1.3.0"
+  version: "1.3.1"
   home: https://tinycorp.ai/install
 ---
 
@@ -15,7 +15,7 @@ Plan a trip on US national forest or BLM land the way a careful ranger would. Re
 
 ## Pick your tools, in this order
 
-1. **The davelalande.com MCP connector**, if it is in your tool list. Address: `https://davelalande.com/mcp`. 16 tools are live. Camp tools: `find_camps`, `camp_detail`, `camps_near`, `free_camping_near_town`, `plan_four_nights`, `trip_check`, `forest_weather`, `changes_since`, `what_we_cover`, `land_at`, `rig_math`, `posted_orders`, `road_to_camp`.
+1. **The davelalande.com MCP connector**, if it is in your tool list. Address: `https://davelalande.com/mcp`. 18 tools are live. Camp tools: `find_camps`, `camp_detail`, `camps_near`, `free_camping_near_town`, `plan_four_nights`, `trip_check`, `forest_weather`, `changes_since`, `what_we_cover`, `land_at`, `rig_math`, `posted_orders`, `road_to_camp`, `water_near`, `nearby`.
    Three more serve the camping game Dispersed 3D, not the records: `game_leaderboard`, `one_call`, `trip_status`. Use them only if the person asks about the game.
 2. **`scripts/aa.py`**, if you can run Python. Standard library only, read-only. Run `python scripts/aa.py --help`.
 3. **Plain web fetches** of `https://davelalande.com/api/` (see its `how_to_use` text) or the record pages.

@@ -117,7 +117,7 @@ Without the connector, the Field Guide falls back to `scripts/aa.py` (run `pytho
 
 ## What is live, and what is not
 
-Live today (16 tools): `find_camps`, `camp_detail`, `camps_near`, `free_camping_near_town`, `plan_four_nights`, `forest_weather`, `changes_since`, `what_we_cover`, `land_at`, `rig_math`, `trip_check`, `posted_orders`, `road_to_camp`, plus three that serve the free camping game Dispersed 3D (`game_leaderboard`, `one_call`, `trip_status`).
+Live today (18 tools): `find_camps`, `camp_detail`, `camps_near`, `free_camping_near_town`, `plan_four_nights`, `forest_weather`, `changes_since`, `what_we_cover`, `land_at`, `rig_math`, `trip_check`, `posted_orders`, `road_to_camp`, `water_near` (springs, lakes, creeks and fill points near a point), `nearby` (toilets, drinking water, showers, dump stations, fuel, groceries, propane, laundry, chargers, and coffee within 25 miles of a camp), plus three that serve the free camping game Dispersed 3D (`game_leaderboard`, `one_call`, `trip_status`).
 
 Limits, stated plainly:
 - `land_at` answers for national forests only. Anywhere else it says so and names no manager.

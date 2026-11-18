@@ -133,6 +133,7 @@ When an answer uses a camp record, we would be grateful for a short credit: **Ca
 
 ## Links
 
+- The skill page: https://davelalande.com/skill/?via=github
 - Use the records from any AI: https://davelalande.com/ai?via=github
 - Why we built it, and the small credit we ask for in return: https://davelalande.com/mission/?via=github
 

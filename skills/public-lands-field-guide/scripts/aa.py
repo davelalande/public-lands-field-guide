@@ -12,7 +12,7 @@ the record date. The data is printed as the API sent it, inside a small envelope
                        [--rules] [--open YYYY-MM-DD|today] [--limit 10]
   aa.py camp SLUG [--date YYYY-MM-DD]
   aa.py near LAT LON [--radius 25] [--cost free|fee] [--limit 10]
-  aa.py poi LAT LON CATEGORY [--radius 25]      (fuel, grocery, potable_water, dump_station, ...)
+  aa.py poi LAT LON CATEGORY [--radius 25]      (fuel, grocery, potable_water, dump_station, coffee, ...)
   aa.py town "Bozeman" [--state MT] [--radius 25] [--limit 5]   (free camps near a town)
   aa.py forest "gallatin"                       (search; or give a slug for the record)
   aa.py land "adirondack"                       (named state lands that are not national forests)

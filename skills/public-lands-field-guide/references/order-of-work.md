@@ -45,7 +45,7 @@ Commands below use `scripts/aa.py`. With the MCP connector, the matching tool is
 - `services_mi` lists the nearest fuel, groceries, water, dump, propane, pharmacy, hospital and hardware with names and straight-line miles. Null entries are unrecorded.
 - `town_name` and `town_mi` give the nearest town. Say straight-line, and that the drive is longer.
 - Toilets: `aa.py toilets LAT LON --radius 25` gives the nearest recorded toilets (vault toilets, restrooms; 21,390 on public land), straight-line miles, with the agency. A recorded toilet can be closed for the season: say the record, not that it is open.
-- More points: `aa.py poi LAT LON fuel --radius 25`. Categories: potable_water, shower, dump_station, fuel, grocery, laundry, propane, air, mechanic, pharmacy, urgent_care, hardware, mail, outfitter. Those come from OpenStreetMap: floor, never a survey, and they need the OpenStreetMap credit.
+- More points: `aa.py poi LAT LON fuel --radius 25`. Categories: potable_water, shower, dump_station, fuel, grocery, laundry, propane, air, mechanic, pharmacy, urgent_care, hardware, mail, outfitter, coffee (cafes within 25 straight-line miles of a camp record only). Those come from OpenStreetMap: floor, never a survey, and they need the OpenStreetMap credit.
 
 ## 7. Fire and weather
 

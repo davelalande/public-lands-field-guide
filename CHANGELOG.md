@@ -20,6 +20,9 @@ Two skills live in this repo, each with its own version (the `metadata.version` 
 
 ## Overland Trip Kit
 
+### 1.0.2 (2026-11-18)
+- A version line ClawHub can read; no change to the skill itself.
+
 ### 1.0.1 (2026-11-17)
 - The checks run `rig.py` in the same process (no subprocess). 15 offline cases.
 

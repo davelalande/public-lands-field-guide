@@ -5,7 +5,7 @@ license: MIT-0. Credit is welcome, never required.
 compatibility: Needs nothing. scripts/rig.py needs Python 3.8 or newer. Pairs with the Public Lands Field Guide skill and the davelalande.com MCP connector for place facts.
 metadata:
   author: Dave Lalande (American Adventurer)
-  version: "1.0"
+  version: "1.0.1"
   home: https://tinycorp.ai/install
 ---
 

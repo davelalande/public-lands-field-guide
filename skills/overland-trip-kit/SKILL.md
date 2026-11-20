@@ -1,12 +1,12 @@
 ---
 name: overland-trip-kit
-version: 1.0.2
+version: 1.0.3
 description: Gets a truck or van ready for an overlanding, boondocking or dispersed camping trip in the US. Use when someone asks what to pack or check, wants a packing list or camp checklist, asks how long their water, gas, battery or solar will last, how much water to carry, or wants a one-page trip sheet. Gear is named by kind, never by brand. Every number is the person's own or a labeled rule of thumb. States no facts about any place and never says a trip is safe.
 license: MIT-0. Credit is welcome, never required.
 compatibility: Needs nothing. scripts/rig.py needs Python 3.8 or newer. Pairs with the Public Lands Field Guide skill and the davelalande.com MCP connector for place facts.
 metadata:
   author: Dave Lalande (American Adventurer)
-  version: "1.0.2"
+  version: "1.0.3"
   home: https://tinycorp.ai/install
 ---
 

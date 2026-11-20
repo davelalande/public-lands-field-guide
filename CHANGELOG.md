@@ -30,6 +30,9 @@ Two skills live in this repo, each with its own version (the `metadata.version` 
 
 ## Overland Trip Kit
 
+### 1.0.3 (2026-11-20)
+- The shared trip sheet says the Field Guide's `aa.py` (1.4 or newer) reaches the connector tools when the connector is missing. No other change.
+
 ### 1.0.2 (2026-11-18)
 - A version line ClawHub can read; no change to the skill itself.
 

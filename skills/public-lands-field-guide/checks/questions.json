@@ -1,6 +1,6 @@
 {
- "about": "25 questions about our records. 'right_answer' is what the live record held on 2026-11-11 (data built 2026-09-24). 'check' says how run_checks.py tests it against the output of scripts/aa.py. This tests our data path, not a model. If a record is rebuilt, a changed answer is a finding to read, not always a bug. A 'behavior' key is for a model test and is not run by run_checks.py.",
- "written": "2026-11-17",
+ "about": "34 questions about our records and the seven connector tools aa.py calls. 'right_answer' is what the live record held when the question was written (camp data built 2026-09-24; connector tools read 2026-11-20). 'check' says how run_checks.py tests it against the output of scripts/aa.py. This tests our data path, not a model. If a record is rebuilt, a changed answer is a finding to read, not always a bug. A 'behavior' key is for a model test and is not run by run_checks.py. changes_since accepts a since date at most 30 days back: q33 uses 2026-11-15.",
+ "written": "2026-11-20",
  "questions": [
   {
    "id": "q01",
@@ -506,6 +506,180 @@
    },
    "record_url": "https://davelalande.com/api/water?lat=45.568&lon=-111.038&radius=10",
    "right_answer": "Water records nearest first, e.g. Moser Creek (a creek, about 2.4 straight-line miles, read 2026-11-17), each with its sources; natural water is untested: filter or boil; the forest office has the final word."
+  },
+  {
+   "id": "q28",
+   "question": "How many whole nights do 10 gallons last for 2 people, and how many road miles do 21 gallons give, at the tool's own assumed rates?",
+   "cmd": [
+    "rig",
+    "10",
+    "21",
+    "2"
+   ],
+   "record_date_optional": true,
+   "check": {
+    "path": "data.water.whole_nights_the_water_lasts",
+    "equals": 5,
+    "also": {
+     "path": "data.gas.miles_on_this_gas_at_the_mpg_used",
+     "equals": 273.0
+    }
+   },
+   "right_answer": "5 whole nights at the assumed 1 gallon per person per day, and 273 road miles at the assumed 13 mpg. Nothing is read from a record, so the record date is unrecorded. The assumptions are labeled. This is not a promise the fill-up is enough.",
+   "record_url": "https://davelalande.com/mcp"
+  },
+  {
+   "id": "q29",
+   "question": "What does a 2-night trip check say for the Custer Gallatin starting 2027-07-15 in the game's truck?",
+   "cmd": [
+    "trip-check",
+    "--start",
+    "2027-07-15",
+    "--forest",
+    "custer-gallatin-national-forest",
+    "--nights",
+    "2",
+    "--rig",
+    "truck"
+   ],
+   "check": {
+    "path": "data.place.slug",
+    "equals": "custer-gallatin-national-forest",
+    "also": {
+     "path": "data.request.start",
+     "equals": "2027-07-15",
+     "also": {
+      "path": "data.summary",
+      "contains": "no forecast yet"
+     }
+    }
+   },
+   "right_answer": "2 nights from 2027-07-15 in the Custer Gallatin, game's truck. Dates outside the forecast window say no forecast yet, never an average. The check knows nothing of roads, closures or permits.",
+   "record_url": "https://davelalande.com/forests/custer-gallatin-national-forest"
+  },
+  {
+   "id": "q30",
+   "question": "Which alerts page does posted_orders read for the Custer Gallatin?",
+   "cmd": [
+    "orders",
+    "Custer Gallatin"
+   ],
+   "check": {
+    "path": "data.forest",
+    "equals": "Custer Gallatin National Forest",
+    "also": {
+     "path": "data.alerts_page",
+     "equals": "https://www.fs.usda.gov/r01/custergallatin/alerts",
+     "also": {
+      "path": "data.source",
+      "contains": "alerts page"
+     }
+    }
+   },
+   "right_answer": "The forest's own alerts page, https://www.fs.usda.gov/r01/custergallatin/alerts, quoted with the read time. Could not read is not none. Nothing posted when we read it is not no fire ban.",
+   "record_url": "https://www.fs.usda.gov/r01/custergallatin/alerts"
+  },
+  {
+   "id": "q31",
+   "question": "What road record does road_to_camp hold for East Fork Hyalite Creek 3B, set against a car, on 2027-07-15?",
+   "cmd": [
+    "road",
+    "east-fork-hyalite-creek-3b-mt-45462n110926w",
+    "car",
+    "--date",
+    "2027-07-15"
+   ],
+   "check": {
+    "path": "data.camp.slug",
+    "equals": "east-fork-hyalite-creek-3b-mt-45462n110926w",
+    "also": {
+     "path": "data.rig",
+     "equals": "car",
+     "also": {
+      "path": "data.coverage.forests_covered",
+      "equals": 20,
+      "also": {
+       "path": "data.summary",
+       "contains": "no mapped road"
+      }
+     }
+    }
+   },
+   "right_answer": "No mapped road within a mile of the pin (read 2026-11-20). The file covers 20 national forests. Unrecorded stays unrecorded. The record is not today's condition, and it does not say a car can make it.",
+   "record_url": "https://davelalande.com/camps/found/east-fork-hyalite-creek-3b-mt-45462n110926w.html"
+  },
+  {
+   "id": "q32",
+   "question": "Whose land does the record name at 45.462, -110.926?",
+   "cmd": [
+    "land-at",
+    "45.462",
+    "-110.926"
+   ],
+   "check": {
+    "path": "data.land.unit",
+    "equals": "Custer Gallatin National Forest",
+    "also": {
+     "path": "data.land.district_or_office",
+     "equals": "Bozeman Ranger District",
+     "also": {
+      "path": "data.land.agency",
+      "equals": "USFS",
+      "also": {
+       "path": "data.scope",
+       "equals": "national_forests_only"
+      }
+     }
+    }
+   },
+   "right_answer": "By the record, the Forest Service manages the surface: Custer Gallatin National Forest, Bozeman Ranger District. National forests only. Signs on the ground and the office win.",
+   "record_url": "https://www.fs.usda.gov/r01/custergallatin/contact-us"
+  },
+  {
+   "id": "q33",
+   "question": "What camp record does changes_since return for Beaver Creek Campground since 2026-11-15?",
+   "cmd": [
+    "changes",
+    "beaver-creek-campground-mt-44857n111373w",
+    "--since",
+    "2026-11-15"
+   ],
+   "check": {
+    "path": "data.since",
+    "equals": "2026-11-15",
+    "also": {
+     "path": "data.records[].slug",
+     "all_equal": "beaver-creek-campground-mt-44857n111373w",
+     "min_len": 1,
+     "also": {
+      "path": "data.records[].record_date",
+      "all_equal": "2026-09-24"
+     }
+    }
+   },
+   "right_answer": "Beaver Creek Campground, record date 2026-09-24, checked since 2026-11-15. A failed read is not nothing new. Nothing new in what we watch is not the same as nothing changed. The tool does not read fire orders.",
+   "record_url": "https://davelalande.com/camps/found/beaver-creek-campground-mt-44857n111373w.html"
+  },
+  {
+   "id": "q34",
+   "question": "Where does the coverage table say it was read from, and as of when?",
+   "cmd": [
+    "coverage"
+   ],
+   "check": {
+    "path": "data.source.file",
+    "equals": "https://davelalande.com/coverage.json",
+    "also": {
+     "path": "data.as_of",
+     "equals": "2026-11-11",
+     "also": {
+      "path": "data.rows",
+      "min_len": 1
+     }
+    }
+   },
+   "right_answer": "https://davelalande.com/coverage.json, table as of 2026-11-11. Each row names what is held, the gap, and who to ask.",
+   "record_url": "https://davelalande.com/coverage.json"
   }
  ]
 }

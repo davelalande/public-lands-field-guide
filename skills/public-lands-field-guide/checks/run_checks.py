@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """run_checks.py - runs checks/questions.json through scripts/aa.py and reports pass or fail.
 
-This checks OUR DATA PATH (the live API and the script), not a language model.
-Python standard library only; it runs scripts/aa.py in this same process (no subprocess). About 27 API calls, paced. Usage:
+This checks OUR DATA PATH (the live API, the script, and the seven connector tools it calls), not a language model.
+Python standard library only; it runs scripts/aa.py in this same process (no subprocess). About 34 calls, paced. Usage:
 
   python run_checks.py            run all of them
   python run_checks.py q06 q15    run only those
@@ -122,7 +122,13 @@ def main():
             continue
         ok, notes = evaluate(q["check"], env)
         # Every output must keep its url, source, record date and credit.
+        # rig_math reads no record, so a null record_date is UNRECORDED, not a missing envelope.
         for k in ENVELOPE_KEYS:
+            if k == "record_date" and q.get("record_date_optional"):
+                if k not in env:
+                    ok = False
+                    notes.append("output is missing %s" % k)
+                continue
             if not env.get(k):
                 ok = False
                 notes.append("output is missing %s" % k)

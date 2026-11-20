@@ -55,7 +55,7 @@ Commands below use `scripts/aa.py`. With the MCP connector, the matching tool is
 
 ## 8. Rig math
 
-- For a whole trip on given dates, call `trip_check` (connector only): gas and water in the game's rig numbers or your own tank, the forecast inside its window, dated camp fire-rule records and camps near. Give `start` and a `forest` or `camp`; add `pump_paved_mi` and `pump_unpaved_mi` (one way, read off a map) for the gas. A date past the forecast says "no forecast yet". It refuses winter nights and past dates. It never says a road or camp can be used.
+- For a whole trip on given dates, call `trip_check` (the connector, or `aa.py trip-check`): gas and water in the game's rig numbers or your own tank, the forecast inside its window, dated camp fire-rule records and camps near. Give `start` and a `forest` or `camp`; add `pump_paved_mi` and `pump_unpaved_mi` (one way, read off a map) for the gas. A date past the forecast says "no forecast yet". It refuses winter nights and past dates. It never says a road or camp can be used.
 - Use `rig_math` if the connector is present. Otherwise do the arithmetic yourself and print your assumptions.
 - Water: gallons divided by (people times gallons per person per day). State the rate you used. The site's own default is 1 gallon per person per day, an assumption, not a rule.
 - Gas: gallons times miles per gallon. State the mpg you used. Count the drive out and back. Straight-line miles understate the road.

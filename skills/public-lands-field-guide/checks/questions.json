@@ -1,5 +1,5 @@
 {
- "about": "34 questions about our records and the seven connector tools aa.py calls. 'right_answer' is what the live record held when the question was written (camp data built 2026-09-24; connector tools read 2026-11-20). 'check' says how run_checks.py tests it against the output of scripts/aa.py. This tests our data path, not a model. If a record is rebuilt, a changed answer is a finding to read, not always a bug. A 'behavior' key is for a model test and is not run by run_checks.py. changes_since accepts a since date at most 30 days back: q33 uses 2026-11-15.",
+ "about": "34 questions about our records and the seven connector tools aa.py calls. 'right_answer' is what the live record held when the question was written (camp data built 2026-09-24; connector tools read 2026-11-20). 'check' says how run_checks.py tests it against the output of scripts/aa.py. This tests our data path, not a model. If a record is rebuilt, a changed answer is a finding to read, not always a bug. A 'behavior' key is for a model test and is not run by run_checks.py. changes_since accepts a since date at most 30 days back: q33 uses {14_DAYS_AGO}, which run_checks.py fills with the date two weeks before today.",
  "written": "2026-11-20",
  "questions": [
   {
@@ -637,16 +637,16 @@
   },
   {
    "id": "q33",
-   "question": "What camp record does changes_since return for Beaver Creek Campground since 2026-11-15?",
+   "question": "What camp record does changes_since return for Beaver Creek Campground since two weeks ago?",
    "cmd": [
     "changes",
     "beaver-creek-campground-mt-44857n111373w",
     "--since",
-    "2026-11-15"
+    "{14_DAYS_AGO}"
    ],
    "check": {
     "path": "data.since",
-    "equals": "2026-11-15",
+    "equals": "{14_DAYS_AGO}",
     "also": {
      "path": "data.records[].slug",
      "all_equal": "beaver-creek-campground-mt-44857n111373w",
@@ -657,7 +657,7 @@
      }
     }
    },
-   "right_answer": "Beaver Creek Campground, record date 2026-09-24, checked since 2026-11-15. A failed read is not nothing new. Nothing new in what we watch is not the same as nothing changed. The tool does not read fire orders.",
+   "right_answer": "Beaver Creek Campground, record date 2026-09-24, checked since two weeks ago. A failed read is not nothing new. Nothing new in what we watch is not the same as nothing changed. The tool does not read fire orders.",
    "record_url": "https://davelalande.com/camps/found/beaver-creek-campground-mt-44857n111373w.html"
   },
   {

@@ -107,6 +107,10 @@ def evaluate(check, env):
 def main():
     want = set(sys.argv[1:])
     qs = json.load(open(os.path.join(HERE, "questions.json"), encoding="utf-8"))["questions"]
+    # changes_since takes a since date at most 30 days back, so a check names "{14_DAYS_AGO}" and gets a real date today.
+    import datetime
+    since = (datetime.date.today() - datetime.timedelta(days=14)).isoformat()
+    qs = json.loads(json.dumps(qs).replace("{14_DAYS_AGO}", since))
     cache, passed, failed = {}, 0, []
     unrec = 0
     for q in qs:

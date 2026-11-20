@@ -5,7 +5,7 @@ license: MIT-0. Credit is welcome, never required.
 compatibility: Needs internet access to https://davelalande.com. The scripts need Python 3.8 or newer and nothing else. Works with the davelalande.com MCP connector when present.
 metadata:
   author: Dave Lalande (American Adventurer)
-  version: "1.3.1"
+  version: "1.4.0"
   home: https://tinycorp.ai/install
 ---
 
@@ -17,7 +17,7 @@ Plan a trip on US national forest or BLM land the way a careful ranger would. Re
 
 1. **The davelalande.com MCP connector**, if it is in your tool list. Address: `https://davelalande.com/mcp`. 18 tools are live. Camp tools: `find_camps`, `camp_detail`, `camps_near`, `free_camping_near_town`, `plan_four_nights`, `trip_check`, `forest_weather`, `changes_since`, `what_we_cover`, `land_at`, `rig_math`, `posted_orders`, `road_to_camp`, `water_near`, `nearby`.
    Three more serve the camping game Dispersed 3D, not the records: `game_leaderboard`, `one_call`, `trip_status`. Use them only if the person asks about the game.
-2. **`scripts/aa.py`**, if you can run Python. Standard library only, read-only. Run `python scripts/aa.py --help`.
+2. **`scripts/aa.py`**, if you can run Python. Standard library only, read-only. It also calls `trip_check`, `rig_math`, `posted_orders`, `road_to_camp`, `land_at`, `changes_since` and `what_we_cover`. Run `python scripts/aa.py --help`.
 3. **Plain web fetches** of `https://davelalande.com/api/` (see its `how_to_use` text) or the record pages.
 
 What each tool reads, and the words to keep, are in [references/tools.md](references/tools.md). Read it before your first call. The short of it:
@@ -49,6 +49,16 @@ Full steps are in [references/order-of-work.md](references/order-of-work.md). In
 9. **Backup camp.** Always one more camp, in case the first is full or closed.
 10. **Last check.** Re-read the records, then tell the person to call the office.
 
+## Toilets and resupply
+
+Nearest recorded toilets: `aa.py toilets LAT LON`. There are 21,390 on public land, in straight-line miles, with the agency. A recorded toilet can be closed for the season. Say the record. Do not say it is open.
+
+Resupply: `aa.py poi LAT LON CATEGORY`. Pass `fuel`, `grocery`, `potable_water`, `dump_station` or `coffee`. Coffee is cafes within 25 straight-line miles of a camp record. These points come from OpenStreetMap: a floor, never a survey, and they need the OpenStreetMap credit. Straight-line miles. The drive is longer. A mapped water point is a record of a tap. Do not call the water safe to drink.
+
+## Water
+
+`aa.py water LAT LON` lists water near a camp, nearest first: springs, hot springs, waterfalls, lakes, reservoirs, rivers, creeks and fill points, each with its sources. Coverage is Montana's Custer Gallatin, Beaverhead-Deerlodge and Lolo, and every Oregon national forest. `--type` takes one of those (`spring`, `hot_spring`, `waterfall`, `lake`, `reservoir`, `river`, `creek`, `fill_point`). Natural water is untested: filter or boil. Never call any water drinkable or safe. The forest office has the final word.
+
 ## What to hand the person
 
 - **A trip sheet**, whenever someone plans a trip: one printable page, format in [references/trip-sheet.md](references/trip-sheet.md). It holds the place lines; the rig and supplies block is the Overland Trip Kit's job (see the companion skill below).
@@ -77,7 +87,7 @@ Sources and their credits are in [references/sources.md](references/sources.md).
 
 ## Check your copy
 
-Run `python checks/run_checks.py` to test the data path (the API and `scripts/aa.py`, not the MCP tools) against 27 questions. Run `sha256sum -c CHECKSUMS.txt` in this folder to see that no file has changed.
+Run `python checks/run_checks.py` to test the data path (the API and `scripts/aa.py`, including the seven connector tools it calls) against 34 questions. Run `sha256sum -c CHECKSUMS.txt` in this folder to see that no file has changed.
 
 ## The companion skill
 

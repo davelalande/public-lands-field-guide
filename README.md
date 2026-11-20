@@ -6,7 +6,7 @@
 
 Two free agent skills: **Public Lands Field Guide**, a national forest camping skill (national forest and BLM camping for AI agents, with about 19,000 sourced camp records), and **Overland Trip Kit**, an overlanding skill for AI agents (checklists, a rig card, and water, gas and power math for a truck or a van). Both are MIT-0. Credit is welcome, never required. No sign-in, no API key.
 
-| | Public Lands Field Guide (1.3.1) | Overland Trip Kit (1.0.2) |
+| | Public Lands Field Guide (1.4.0) | Overland Trip Kit (1.0.2) |
 | --- | --- | --- |
 | It answers | **Where, and what do the records say?** | **Am I ready, and will my supplies last?** |
 | Built on | the American Adventurer camp records and 18 connector tools | know-how and arithmetic; needs no network |
@@ -54,9 +54,9 @@ It never says "enough," and it never says a trip is safe.
 | Folder | What it is |
 | --- | --- |
 | `skills/public-lands-field-guide/SKILL.md` | The Field Guide's instructions |
-| `.../scripts/aa.py` | Read-only helper for the API. Python 3.8+, standard library only. Camps, forests, weather, fire, water near a point (springs, waterfalls, hot springs, lakes, creeks, fill points), the nearest recorded toilets (21,390), and resupply near a point: drinking water, showers, dump stations, fuel, groceries, propane |
+| `.../scripts/aa.py` | Read-only helper for the API and seven connector tools (trip check, rig math, posted orders, the recorded road, whose land, what changed, coverage). Python 3.8+, standard library only. Camps, forests, weather, fire, water near a point (springs, waterfalls, hot springs, lakes, reservoirs, rivers, creeks, fill points), the nearest recorded toilets (21,390), and resupply near a point: drinking water, showers, dump stations, fuel, groceries, propane |
 | `.../references/` | Order of work, honesty rules, tools, a before-you-go list, trip sheet, what you can ask, coverage, sources |
-| `.../checks/` | 27 questions that test the data path (needs internet) |
+| `.../checks/` | 34 questions that test the data path (needs internet) |
 | `skills/overland-trip-kit/SKILL.md` | The Kit's instructions |
 | `.../scripts/rig.py` | Water, gas and power arithmetic. Python 3.8+, standard library only, no network |
 | `.../references/` | Rig card, six checklists with truck and van lines, gear by kind, trip sheet, what you can ask |
@@ -64,7 +64,7 @@ It never says "enough," and it never says a trip is safe.
 | `.../CHECKSUMS.txt` | SHA-256 of every file in that skill |
 | `_shared/` | The files both skills share, written once, and the script that copies them in |
 
-Skill versions: Public Lands Field Guide `1.3.1`, Overland Trip Kit `1.0.2`. What changed: [CHANGELOG.md](CHANGELOG.md).
+Skill versions: Public Lands Field Guide `1.4.0`, Overland Trip Kit `1.0.2`. What changed: [CHANGELOG.md](CHANGELOG.md).
 
 ## Install
 

@@ -4,6 +4,11 @@ Two skills live in this repo, each with its own version (the `metadata.version` 
 
 ## Public Lands Field Guide
 
+### 1.4.0 (2026-11-20)
+- `aa.py` calls the seven connector tools it used to skip: `trip_check`, `rig_math`, `posted_orders`, `road_to_camp`, `land_at`, `changes_since` and `what_we_cover` (`trip-check`, `rig`, `orders`, `road`, `land-at`, `changes`, `coverage`). Same envelope. A null field is unrecorded. `rig_math` reads no record, so its record date stays unrecorded.
+- Two short sections: toilets and resupply, and water. Natural water stays "untested: filter or boil."
+- The checks exercise those seven subcommands live. 34 checks.
+
 ### 1.3.1 (2026-11-18)
 - The tool list now names all 18 connector tools, `water_near` and `nearby` included (it still said 16). No change to how the skill works.
 

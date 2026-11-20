@@ -2,6 +2,11 @@
 
 Two skills live in this repo, each with its own version (the `metadata.version` line in its `SKILL.md`). Each release is also a git tag: `field-guide-v1.3.0`, `trip-kit-v1.0.1`.
 
+## Claude Code plugin
+
+### 1.0.0 (2026-11-20)
+- The repo is now a Claude Code plugin and marketplace, `national-forest-overlanding`: one command installs both skills (as they sit in `skills/`, no second copy) and the American Adventurer connector (`https://davelalande.com/mcp`, no sign-in). The skills themselves are unchanged.
+
 ## Public Lands Field Guide
 
 ### 1.4.0 (2026-11-20)

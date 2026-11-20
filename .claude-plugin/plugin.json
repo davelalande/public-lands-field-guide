@@ -1,0 +1,15 @@
+{
+  "name": "national-forest-overlanding",
+  "displayName": "National Forest + Overlanding",
+  "version": "1.0.0",
+  "description": "National forest and BLM dispersed camping, overlanding trip planning: sourced US public-land records for your AI.",
+  "author": {
+    "name": "Dave Lalande",
+    "url": "https://davelalande.com"
+  },
+  "homepage": "https://tinycorp.ai/install?via=github",
+  "repository": "https://github.com/davelalande/public-lands-field-guide",
+  "license": "MIT-0",
+  "privacyPolicyUrl": "https://davelalande.com/privacy",
+  "keywords": ["camping", "dispersed-camping", "national-forest", "blm", "overlanding", "public-lands", "mcp"]
+}

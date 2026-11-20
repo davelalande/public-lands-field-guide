@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "american-adventurer": {
+      "type": "http",
+      "url": "https://davelalande.com/mcp"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "national-forest-overlanding",
+  "description": "National forest and BLM dispersed camping, overlanding trip planning: sourced US public-land records for your AI.",
+  "owner": {
+    "name": "Dave Lalande",
+    "url": "https://davelalande.com"
+  },
+  "plugins": [
+    {
+      "name": "national-forest-overlanding",
+      "source": "./",
+      "description": "National forest and BLM dispersed camping, overlanding trip planning: sourced US public-land records for your AI. Two skills (Public Lands Field Guide, Overland Trip Kit) and one connector (American Adventurer). No sign-in, no key.",
+      "category": "travel",
+      "tags": ["camping", "national-forest", "overlanding", "public-lands"]
+    }
+  ]
+}

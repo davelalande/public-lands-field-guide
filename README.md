@@ -68,6 +68,20 @@ Skill versions: Public Lands Field Guide `1.4.0`, Overland Trip Kit `1.0.3`. Wha
 
 ## Install
 
+### Install in Claude Code: one step
+
+This repo is both a Claude Code plugin and its own marketplace. One command (Claude Code 2.1.275 or later) adds the marketplace and installs the plugin:
+
+```sh
+claude plugin install national-forest-overlanding --marketplace davelalande/public-lands-field-guide
+```
+
+Inside a Claude Code session the same step is `/plugin install national-forest-overlanding --marketplace davelalande/public-lands-field-guide`. If you prefer two commands: `claude plugin marketplace add davelalande/public-lands-field-guide`, then `claude plugin install national-forest-overlanding@national-forest-overlanding`. Start a new session afterward so the skills and the connector load.
+
+What the plugin adds: the two skills (Public Lands Field Guide and Overland Trip Kit) and one connector (American Adventurer, `https://davelalande.com/mcp`). No sign-in, no key, nothing else: no hooks, no commands, no background process. To remove it: `claude plugin uninstall national-forest-overlanding`.
+
+### By hand
+
 A skill is one folder. Copy the folder (or both) into your tool's skills location. Locations below were checked against each tool's own docs on November 14, 2026; docs change, so check yours if it does not load.
 
 ```sh

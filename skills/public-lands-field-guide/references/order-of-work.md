@@ -17,6 +17,11 @@ Commands below use `scripts/aa.py`. With the MCP connector, the matching tool is
 - A closure, season or stay limit decides whether the trip happens, so say it first.
 - No `rules` object means unrecorded. It never means "no limit" and never means "open."
 - `stay_limit_status: "None published"` means the source page published no number. Quote that. It is still not permission to stay longer.
+- When the camp record names no stay limit, or the person asks in general ("how long can I stay?"), quote the area-wide rule with its source, never a number from memory:
+  - Montana national forests: 16 days on one site (Forest Service Northern Region order R1-2025-01, in effect to July 2030), unless posted. Region 1's Idaho forests and the Dakota Prairie Grasslands: 14 days under the same order. Source: https://www.fs.usda.gov/r01/alerts/northern-region-camping-target-restrictions-pallet-prohibition . The connector's `land_at` (or `aa.py land-at LAT LON`) returns the same rule for a point.
+  - BLM land: 14 days is the general rule (43 CFR 8365.1-6), unless the office posts otherwise.
+  - Other national forests set their own limits by order: say "check the forest's posted orders" and name the office. Do not guess a number.
+  - A posted sign or a closer order always wins. A stay limit is never permission to stay where a sign says no.
 - Permit prices are not in the records. Today's fire orders are not in the camp records; `posted_orders` quotes the forest's own alerts page for the forests it reads (see step 7). Name the office.
 
 ## 3. Season: spring, summer and fall only

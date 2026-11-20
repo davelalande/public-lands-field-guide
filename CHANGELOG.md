@@ -8,6 +8,8 @@ Two skills live in this repo, each with its own version (the `metadata.version` 
 - `aa.py` calls the seven connector tools it used to skip: `trip_check`, `rig_math`, `posted_orders`, `road_to_camp`, `land_at`, `changes_since` and `what_we_cover` (`trip-check`, `rig`, `orders`, `road`, `land-at`, `changes`, `coverage`). Same envelope. A null field is unrecorded. `rig_math` reads no record, so its record date stays unrecorded.
 - Two short sections: toilets and resupply, and water. Natural water stays "untested: filter or boil."
 - The checks exercise those seven subcommands live. 34 checks.
+- Stay limits: when a record names none, or someone asks in general, quote the area-wide rule with its order (Montana national forests 16 days on one site, R1-2025-01; Region 1 Idaho and the Dakota Prairie 14; BLM 14), never a number from memory. The description now says "how long you can stay" so the skill is picked for that question.
+- The shared trip sheet (both skills) names the `aa.py` commands that reach the connector tools.
 
 ### 1.3.1 (2026-11-18)
 - The tool list now names all 18 connector tools, `water_near` and `nearby` included (it still said 16). No change to how the skill works.

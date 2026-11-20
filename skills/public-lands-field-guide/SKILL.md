@@ -1,6 +1,6 @@
 ---
 name: public-lands-field-guide
-description: Plans camping and overlanding trips on US national forest and BLM land, the careful way, using the free American Adventurer records (about 19,000 sourced camps, no sign-in). Use when someone asks where to camp, how to plan a trip, free or dispersed camping, a town run, water, season, weather, wildfire reports, the fire orders a forest has posted, the recorded road to a camp, a gas-and-water trip check, a backup camp or a printable trip sheet on US public land. Shows each record's link, source and date, names what is unrecorded, and never says a place is open, legal, passable or safe.
+description: Plans camping and overlanding trips on US national forest and BLM land, the careful way, using the free American Adventurer records (about 19,000 sourced camps, no sign-in). Use when someone asks where to camp, how to plan a trip, free or dispersed camping, a town run, water, season, how long you can stay, weather, wildfire reports, the fire orders a forest has posted, the recorded road to a camp, a gas-and-water trip check, a backup camp or a printable trip sheet on US public land. Shows each record's link, source and date, names what is unrecorded, and never says a place is open, legal, passable or safe.
 license: MIT-0. Credit is welcome, never required.
 compatibility: Needs internet access to https://davelalande.com. The scripts need Python 3.8 or newer and nothing else. Works with the davelalande.com MCP connector when present.
 metadata:

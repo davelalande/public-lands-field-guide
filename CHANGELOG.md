@@ -9,6 +9,9 @@ Two skills live in this repo, each with its own version (the `metadata.version` 
 
 ## Public Lands Field Guide
 
+### 1.4.1 (2026-11-23)
+- Step 2 of the order of work now names the area-wide stay rule itself (Montana national forests 16 days on one site, order R1-2025-01; Region 1 Idaho forests and the Dakota Prairie Grasslands 14 days; BLM 14 days in any 28; unless posted; the forest's own posted order wins), so an answer cites the order without opening references/order-of-work.md. No other change.
+
 ### 1.4.0 (2026-11-20)
 - `aa.py` calls the seven connector tools it used to skip: `trip_check`, `rig_math`, `posted_orders`, `road_to_camp`, `land_at`, `changes_since` and `what_we_cover` (`trip-check`, `rig`, `orders`, `road`, `land-at`, `changes`, `coverage`). Same envelope. A null field is unrecorded. `rig_math` reads no record, so its record date stays unrecorded.
 - Two short sections: toilets and resupply, and water. Natural water stays "untested: filter or boil."

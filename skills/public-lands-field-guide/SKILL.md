@@ -39,7 +39,7 @@ What each tool reads, and the words to keep, are in [references/tools.md](refere
 Full steps are in [references/order-of-work.md](references/order-of-work.md). In short:
 
 1. **Land.** Who manages it? Use the record's land manager and forest.
-2. **Rules.** Lead with any recorded closure, season or stay limit.
+2. **Rules.** Lead with any recorded closure, season or stay limit. Area-wide stay rule: Montana national forests 16 days on one site (Forest Service Northern Region order R1-2025-01); Region 1's Idaho forests and the Dakota Prairie Grasslands 14 days; BLM 14 days; unless posted. Say the order's number, and say the forest's own posted order wins.
 3. **Season.** Spring, summer and fall only. Never plan snow or winter.
 4. **Road.** Say what `road_to_camp` records for the camps it covers (20 national forests); elsewhere not in the records. Name the office.
 5. **Water.** What the record holds, then water near the camp: `water_near` (or `aa.py water LAT LON`) finds springs, hot springs, waterfalls, lakes, creeks and Forest Service fill points with their sources, in Montana's Custer Gallatin, Beaverhead-Deerlodge and Lolo and every Oregon national forest. Natural water is untested: filter or boil. Never call water safe to drink.

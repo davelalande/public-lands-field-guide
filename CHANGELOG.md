@@ -26,6 +26,9 @@ Four skills live in this repo, each with its own version (the `metadata.version`
 
 ## Public Lands Field Guide
 
+### 1.4.2 (2026-11-24)
+- Step 2 of the order of work leads with a recorded closure or season. A stay limit is given only when the person asks how long they can stay, or when the camp record itself holds one, and then as a calm fact with the area-wide rule and its order (the numbers and R1-2025-01 are unchanged). It is never volunteered as a worry.
+
 ### 1.4.1 (2026-11-23)
 - Step 2 of the order of work now names the area-wide stay rule itself (Montana national forests 16 days on one site, order R1-2025-01; Region 1 Idaho forests and the Dakota Prairie Grasslands 14 days; BLM 14 days in any 28; unless posted; the forest's own posted order wins), so an answer cites the order without opening references/order-of-work.md.
 - `aa.py orders` gives the record date again: the connector's `posted_orders` now returns the alerts page's read time at the top level (`read_at`), and `aa.py` reads it there too.

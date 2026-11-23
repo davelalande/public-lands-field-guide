@@ -1,8 +1,8 @@
 {
   "name": "national-forest-overlanding",
   "displayName": "National Forest + Overlanding",
-  "version": "1.0.0",
-  "description": "National forest and BLM dispersed camping, overlanding trip planning: sourced US public-land records for your AI.",
+  "version": "1.1.0",
+  "description": "National forest and BLM dispersed camping, overlanding trip planning: sourced US public-land records for your AI. Four skills (Free Camping Near a Town, Public Lands Field Guide, Overland Trip Kit, Play Dispersed 3D) and one connector (American Adventurer). No sign-in, no key.",
   "author": {
     "name": "Dave Lalande",
     "url": "https://davelalande.com"

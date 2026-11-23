@@ -1,11 +1,28 @@
 # Changelog
 
-Two skills live in this repo, each with its own version (the `metadata.version` line in its `SKILL.md`). Each release is also a git tag: `field-guide-v1.3.0`, `trip-kit-v1.0.1`.
+Four skills live in this repo, each with its own version (the `metadata.version` line in its `SKILL.md`). Each release is also a git tag: `field-guide-v1.3.0`, `trip-kit-v1.0.1`, `near-town-v1.0.0`, `play-dispersed-3d-v1.0.0`, and `plugin-v1.1.0` for the plugin.
 
 ## Claude Code plugin
 
+### 1.1.0 (2026-11-24)
+- Two new skills join the plugin, so it now carries four skills and one connector: **Free Camping Near a Town** and **Play Dispersed 3D**. The Field Guide (1.4.1) and the Trip Kit (1.0.3) are unchanged. The version moves because an installed plugin stays on the version in `plugin.json` until it changes.
+
 ### 1.0.0 (2026-11-20)
 - The repo is now a Claude Code plugin and marketplace, `national-forest-overlanding`: one command installs both skills (as they sit in `skills/`, no second copy) and the American Adventurer connector (`https://davelalande.com/mcp`, no sign-in). The skills themselves are unchanged.
+
+## Free Camping Near a Town
+
+### 1.0.0 (2026-11-24)
+- New. One question, one short answer: "where can I camp for free near <town>?" The free camps on record within 25 miles, nearest first, each with its record link, source and record date; "unrecorded" for anything the record does not hold. For dates, water, roads or a whole trip it hands off to the Field Guide.
+- `scripts/near_town.py` (standard library, read-only) reads the same two addresses as the Field Guide's `aa.py town`. If no free camp is on record inside the radius it widens once to 50 miles.
+- 8 live checks.
+
+## Play Dispersed 3D
+
+### 1.0.0 (2026-11-24)
+- New. Helps an assistant play the free game Dispersed 3D with its person watching: one Call with no browser, a seat by links, or a browser tab. It reads the game's own `llms.txt` first and keeps manners and fair play; the game's menu always wins.
+- `scripts/call.py` (standard library, read-only) makes the day's Call (the same one the connector's `one_call` picks) and prints the reveal link for the assistant's pick. It never prints the checked AI's pick.
+- 9 live checks. They never make a seat, make a move or submit to the leaderboard.
 
 ## Public Lands Field Guide
 

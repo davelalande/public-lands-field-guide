@@ -9,7 +9,7 @@
     {
       "name": "national-forest-overlanding",
       "source": "./",
-      "description": "National forest and BLM dispersed camping, overlanding trip planning: sourced US public-land records for your AI. Two skills (Public Lands Field Guide, Overland Trip Kit) and one connector (American Adventurer). No sign-in, no key.",
+      "description": "National forest and BLM dispersed camping, overlanding trip planning: sourced US public-land records for your AI. Four skills (Free Camping Near a Town, Public Lands Field Guide, Overland Trip Kit, Play Dispersed 3D) and one connector (American Adventurer). No sign-in, no key.",
       "category": "travel",
       "tags": ["camping", "national-forest", "overlanding", "public-lands"]
     }

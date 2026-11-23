@@ -325,6 +325,9 @@ def tool_record_date(data):
         found = _filled(office.get("read_at"))
         if found:
             return found
+    found = _filled(data.get("read_at"))       # posted_orders (11/22 on): the alerts page read time sits at the top level
+    if found:
+        return found
     land = data.get("land")
     if isinstance(land, dict):
         found = _filled(land.get("source_date"))

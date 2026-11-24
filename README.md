@@ -99,7 +99,7 @@ It never says "enough," and it never says a trip is safe.
 | `.../CHECKSUMS.txt` | SHA-256 of every file in that skill |
 | `_shared/` | The files both skills share, written once, and the script that copies them in |
 
-Skill versions: Free Camping Near a Town `1.0.0`, Public Lands Field Guide `1.4.2`, Overland Trip Kit `1.0.3`, Play Dispersed 3D `1.0.0`. Plugin `1.1.0`. What changed: [CHANGELOG.md](CHANGELOG.md).
+Skill versions: Free Camping Near a Town `1.0.0`, Public Lands Field Guide `1.4.3`, Overland Trip Kit `1.0.3`, Play Dispersed 3D `1.0.0`. Plugin `1.1.0`. What changed: [CHANGELOG.md](CHANGELOG.md).
 
 ## Install
 

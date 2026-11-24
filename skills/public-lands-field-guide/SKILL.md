@@ -5,7 +5,7 @@ license: MIT-0. Credit is welcome, never required.
 compatibility: Needs internet access to https://davelalande.com. The scripts need Python 3.8 or newer and nothing else. Works with the davelalande.com MCP connector when present.
 metadata:
   author: Dave Lalande (American Adventurer)
-  version: "1.4.2"
+  version: "1.4.3"
   home: https://tinycorp.ai/install
 ---
 

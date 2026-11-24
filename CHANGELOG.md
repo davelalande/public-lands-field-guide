@@ -5,7 +5,7 @@ Four skills live in this repo, each with its own version (the `metadata.version`
 ## Claude Code plugin
 
 ### 1.1.0 (2026-11-24)
-- Two new skills join the plugin, so it now carries four skills and one connector: **Free Camping Near a Town** and **Play Dispersed 3D**. The Field Guide (1.4.1) and the Trip Kit (1.0.3) are unchanged. The version moves because an installed plugin stays on the version in `plugin.json` until it changes.
+- Two new skills join the plugin, so it now carries four skills and one connector: **Free Camping Near a Town** and **Play Dispersed 3D**. The Field Guide moves to 1.4.3 (a stay limit only when asked or on record; posted orders show their read date; `--summary orders` fixed) and the Trip Kit stays at 1.0.3. The version moves because an installed plugin stays on the version in `plugin.json` until it changes.
 
 ### 1.0.0 (2026-11-20)
 - The repo is now a Claude Code plugin and marketplace, `national-forest-overlanding`: one command installs both skills (as they sit in `skills/`, no second copy) and the American Adventurer connector (`https://davelalande.com/mcp`, no sign-in). The skills themselves are unchanged.
@@ -25,6 +25,9 @@ Four skills live in this repo, each with its own version (the `metadata.version`
 - 9 live checks. They never make a seat, make a move or submit to the leaderboard.
 
 ## Public Lands Field Guide
+
+### 1.4.3 (2026-11-24)
+- `aa.py --summary orders <forest>` no longer crashes (found by Grok Bot's review 5). A posted-orders answer names the forest as plain text, so the summary now prints its own lines: the forest's summary, up to 8 orders (title, kind, start as posted), the read time and the alerts page. `--summary forest` is unchanged.
 
 ### 1.4.2 (2026-11-24)
 - Step 2 of the order of work leads with a recorded closure or season. A stay limit is given only when the person asks how long they can stay, or when the camp record itself holds one, and then as a calm fact with the area-wide rule and its order (the numbers and R1-2025-01 are unchanged). It is never volunteered as a worry.

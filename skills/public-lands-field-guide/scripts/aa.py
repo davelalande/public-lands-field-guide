@@ -417,7 +417,12 @@ def summarize(env):
     elif "forests" in d:
         for f in d["forests"]:
             out.append("%s | states %s | %s camps | %s" % (f["name"], f.get("states"), f.get("camp_count"), f.get("url")))
-    elif "forest" in d:
+    elif "alerts_page" in d:                                 # posted orders: "forest" here is a name, not a forest object
+        out.append(d["summary"] if isinstance(d.get("summary"), str) else "%s: %s" % (d.get("forest"), d.get("status")))
+        for o in (d.get("orders") or [])[:8]:
+            out.append("  %s | %s | from %s" % (o.get("title"), o.get("kind"), o.get("start_as_posted")))
+        out.append("  read: %s | alerts page: %s" % (d.get("read_at"), d.get("alerts_page")))
+    elif isinstance(d.get("forest"), dict):
         f = d["forest"]
         out.append("%s | %s camps | %s free | url: %s" % (f["name"], f.get("camps_in_corpus"), f.get("camps_free"), f.get("url")))
     elif "lands" in d:
